@@ -16,11 +16,14 @@
         border-bottom-right-radius: var(--r8);
         font-family: var(--c-b);
 
+        transition: color var(--time) var(--time-des);
+
         &.active {
+          transition: color var(--time) var(--time-des);
+
           background-color: var(--white);
           color: var(--black);
           padding: var(--r12);
-          font-size: var(--fz-24);
         }
       }
     }
@@ -31,6 +34,7 @@
 
         > span {
           color: var(--gray);
+          transition: color var(--time) var(--time-des);
         }
 
         &.active {
@@ -38,6 +42,7 @@
 
           > span {
             color: var(--black);
+            transition: color var(--time) var(--time-des);
           }
         }
       }
