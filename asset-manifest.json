@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/rent-ride-ts/static/css/main.c61fc2ca.css",
-    "main.js": "/rent-ride-ts/static/js/main.b721b64f.js",
-    "static/media/Comfortaa-Bold.ttf": "/rent-ride-ts/static/media/Comfortaa-Bold.b54f8469bcbf22829055.ttf",
-    "static/media/Comfortaa-Regular.ttf": "/rent-ride-ts/static/media/Comfortaa-Regular.6718cbec512d80eb9cbb.ttf",
-    "static/media/Comfortaa-Light.ttf": "/rent-ride-ts/static/media/Comfortaa-Light.aa1ca0954920c776511c.ttf",
+    "main.css": "/rent-ride-ts/static/css/main.097d76a8.css",
+    "main.js": "/rent-ride-ts/static/js/main.7ec5f1d3.js",
+    "static/media/mob-bg.jpeg": "/rent-ride-ts/static/media/mob-bg.a6187e1a1f52b080f977.jpeg",
+    "static/media/tab-bg.jpeg": "/rent-ride-ts/static/media/tab-bg.18350dc38b99258f6bb4.jpeg",
+    "static/media/desk-bg.jpeg": "/rent-ride-ts/static/media/desk-bg.1c671378e00757b858ed.jpeg",
     "index.html": "/rent-ride-ts/index.html",
-    "main.c61fc2ca.css.map": "/rent-ride-ts/static/css/main.c61fc2ca.css.map",
-    "main.b721b64f.js.map": "/rent-ride-ts/static/js/main.b721b64f.js.map"
+    "main.097d76a8.css.map": "/rent-ride-ts/static/css/main.097d76a8.css.map",
+    "main.7ec5f1d3.js.map": "/rent-ride-ts/static/js/main.7ec5f1d3.js.map"
   },
   "entrypoints": [
-    "static/css/main.c61fc2ca.css",
-    "static/js/main.b721b64f.js"
+    "static/css/main.097d76a8.css",
+    "static/js/main.7ec5f1d3.js"
   ]
 }
