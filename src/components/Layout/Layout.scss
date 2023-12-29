@@ -3,4 +3,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background: linear-gradient(
+      rgba(128, 128, 128, 0.17),
+      rgba(128, 128, 128, 0.17)
+    ),
+    url('../../images/mob-bg.jpeg') no-repeat center/cover fixed;
+
+  @media screen and (min-width: 576px) {
+    background: linear-gradient(
+        rgba(128, 128, 128, 0.17),
+        rgba(128, 128, 128, 0.17)
+      ),
+      url('../../images/tab-bg.jpeg') no-repeat center/cover fixed;
+  }
+
+  @media screen and (min-width: 992px) {
+    background: linear-gradient(
+        rgba(128, 128, 128, 0.17),
+        rgba(128, 128, 128, 0.17)
+      ),
+      url('../../images/desk-bg.jpeg') no-repeat center/cover fixed;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--r24);
+  background-image: linear-gradient(
+    rgba(128, 128, 128, 0.003),
+    rgba(128, 128, 128, 0.333)
+  );
+
+  padding: var(--r20) 0;
 }

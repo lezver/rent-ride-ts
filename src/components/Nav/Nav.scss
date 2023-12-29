@@ -6,24 +6,31 @@
     > li {
       display: flex;
       align-items: center;
-      gap: var(--r12);
 
       > a {
-        font-size: var(--fz-20);
+        font-size: var(--fz20);
         color: var(--gray);
-
+        font-weight: var(--fw7);
         border-bottom-left-radius: var(--r8);
         border-bottom-right-radius: var(--r8);
         font-family: var(--c-b);
+        background-color: transparent;
+        padding: var(--r8);
 
-        transition: color var(--time) var(--time-des);
+        transition: color var(--time) var(--time-des),
+          background var(--time) var(--time-des);
 
         &.active {
-          transition: color var(--time) var(--time-des);
-
           background-color: var(--white);
           color: var(--black);
-          padding: var(--r12);
+        }
+
+        @media screen and (min-width: 576px) {
+          font-size: var(--fz24);
+        }
+
+        @media screen and (min-width: 992px) {
+          font-size: var(--fz28);
         }
       }
     }
@@ -34,7 +41,6 @@
 
         > span {
           color: var(--gray);
-          transition: color var(--time) var(--time-des);
         }
 
         &.active {
@@ -42,7 +48,6 @@
 
           > span {
             color: var(--black);
-            transition: color var(--time) var(--time-des);
           }
         }
       }

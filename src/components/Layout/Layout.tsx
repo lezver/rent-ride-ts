@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import './Layout.scss';
 import { Suspense } from 'react';
-import { Nav } from '../';
+import { ByMe, Nav, SocialMedia } from '../';
 
 export const Layout: React.FC = () => {
   return (
@@ -14,7 +14,10 @@ export const Layout: React.FC = () => {
           <Outlet />
         </Suspense>
       </main>
-      <footer className="footer">...</footer>
+      <footer className="footer">
+        <SocialMedia />
+        <ByMe />
+      </footer>
     </>
   );
 };

@@ -1,0 +1,86 @@
+.home {
+  padding-top: 15%;
+  padding-bottom: 15%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--r16);
+
+  text-align: center;
+
+  > h1 {
+    font-size: var(--fz28);
+    color: var(--red);
+
+    text-shadow: -1px 1px 2px var(--black), 1px -1px 2px var(--black),
+      -1px -1px 2px var(--black), 1px 1px 2px var(--black), 0 0 2em var(--black);
+
+    @media screen and (min-width: 576px) {
+      font-size: var(--fz36);
+    }
+
+    @media screen and (min-width: 992px) {
+      font-size: var(--fz40);
+    }
+  }
+
+  > p {
+    color: var(--white);
+    text-shadow: -1px 1px 2px var(--black), 1px -1px 2px var(--black),
+      -1px -1px 2px var(--black), 1px 1px 2px var(--black), 0 0 2em var(--black);
+
+    @media screen and (min-width: 576px) {
+      font-size: var(--fz18);
+    }
+
+    @media screen and (min-width: 992px) {
+      font-size: var(--fz20);
+    }
+  }
+
+  > p:last-child {
+    font-size: var(--fz18);
+    color: var(--light-red);
+
+    @media screen and (min-width: 576px) {
+      font-size: var(--fz20);
+    }
+
+    @media screen and (min-width: 992px) {
+      font-size: var(--fz24);
+    }
+  }
+
+  > button {
+    display: flex;
+    gap: var(--r8);
+    align-items: center;
+    font-size: var(--fz18);
+    border-radius: var(--r12);
+    color: var(--white);
+    background-color: var(--gray);
+    font-weight: var(--fw7);
+    padding: var(--r8) var(--r20);
+    border: 3px solid var(--white);
+
+    text-shadow: -1px 1px 2px var(--black), 1px -1px 2px var(--black),
+      -1px -1px 2px var(--black), 1px 1px 2px var(--black), 0 0 2em var(--black);
+
+    outline: none;
+    border: none;
+
+    > svg {
+      color: var(--light-red);
+    }
+
+    @media screen and (min-width: 576px) {
+      font-size: var(--fz20);
+    }
+
+    @media screen and (min-width: 992px) {
+      font-size: var(--fz24);
+    }
+  }
+}

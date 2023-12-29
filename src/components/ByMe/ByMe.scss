@@ -1,0 +1,59 @@
+.by-me {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+
+  text-align: center;
+  font-size: var(--fz12);
+
+  @media screen and (min-width: 576px) {
+    font-size: var(--fz14);
+  }
+  @media screen and (min-width: 992px) {
+    font-size: var(--fz16);
+  }
+
+  > p:first-child {
+    display: flex;
+    align-items: center;
+    color: var(--gray);
+    > span {
+      color: var(--light-red);
+      font-weight: 700;
+    }
+
+    > a {
+      margin-left: var(--r8);
+
+      > svg {
+        animation: git var(--time3) infinite var(--time3) alternate
+          var(--time-des);
+
+        @keyframes git {
+          0% {
+            transform: scale(0.8);
+            color: var(--light-red);
+          }
+          100% {
+            transform: scale(1);
+            color: var(--red);
+          }
+        }
+      }
+
+      &:hover {
+        > svg {
+          animation-play-state: paused;
+        }
+      }
+    }
+  }
+
+  > p:last-child > span {
+    color: var(--gray);
+    > span {
+      color: var(--black);
+    }
+  }
+}

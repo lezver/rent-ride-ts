@@ -1,0 +1,26 @@
+.social-media {
+  > h3 {
+    color: var(--gray);
+    font-size: var(--fz24);
+
+    @media screen and (min-width: 576px) {
+      font-size: var(--fz28);
+    }
+    @media screen and (min-width: 992px) {
+      font-size: var(--fz32);
+    }
+  }
+
+  > ul {
+    display: flex;
+    justify-content: center;
+    gap: var(--r24);
+
+    > li > a {
+      transition: color var(--time) var(--time-des);
+      &:hover {
+        color: var(--light-red);
+      }
+    }
+  }
+}

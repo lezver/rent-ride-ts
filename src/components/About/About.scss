@@ -1,0 +1,69 @@
+.about {
+  margin: 0;
+  padding: var(--r8);
+  padding-left: var(--r24);
+  background-color: var(--bg-gray);
+  border-radius: var(--r8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--r8);
+
+  > li::marker {
+    color: var(--red);
+    font-size: var(--fz20);
+  }
+
+  > li {
+    text-align: start;
+
+    > h2 {
+      font-size: var(--fz20);
+
+      color: var(--gray);
+      text-shadow: -1px 1px 2px var(--black), 1px -1px 2px var(--black),
+        -1px -1px 2px var(--black), 1px 1px 2px var(--black),
+        0 0 2em var(--black);
+
+      @media screen and (min-width: 576px) {
+        font-size: var(--fz22);
+      }
+
+      @media screen and (min-width: 992px) {
+        font-size: var(--fz24);
+      }
+    }
+
+    @media screen and (min-width: 576px) {
+      & > p {
+        font-size: var(--fz18);
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      & > p {
+        font-size: var(--fz20);
+      }
+    }
+  }
+
+  > li:last-child {
+    display: flex;
+    justify-content: center;
+    margin: var(--r12) 0;
+    margin-right: var(--r24);
+
+    &::marker {
+      content: '';
+    }
+
+    > button {
+      border: none;
+      outline: none;
+      background-color: transparent;
+
+      > svg {
+        color: var(--light-red);
+      }
+    }
+  }
+}

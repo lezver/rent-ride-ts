@@ -1,4 +1,5 @@
 @import-normalize; /* bring in normalize.css styles */
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;400;700&display=swap');
 
 *,
 *:after,
@@ -6,22 +7,24 @@
   box-sizing: border-box;
 }
 
-$test: red;
-
 :root {
   --gray: #6f6f6f;
   --black: #131313;
   --white: #e0e0e0;
   --red: #ff4040;
+  --light-red: rgb(255, 100, 100);
+  --bg-gray: rgba(55, 55, 55, 0.7);
 
-  --fz-12: 12px;
-  --fz-16: 16px;
-  --fz-20: 20px;
-  --fz-24: 24px;
-  --fz-28: 28px;
-  --fz-32: 32px;
-  --fz-36: 36px;
-  --fz-40: 40px;
+  --fz12: 12px;
+  --fz16: 16px;
+  --fz18: 18px;
+  --fz20: 20px;
+  --fz22: 22px;
+  --fz24: 24px;
+  --fz28: 28px;
+  --fz32: 32px;
+  --fz36: 36px;
+  --fz40: 40px;
 
   --r4: 4px;
   --r8: 8px;
@@ -30,27 +33,13 @@ $test: red;
   --r20: 20px;
   --r24: 24px;
 
-  --c-r: 'Comforta-Regular';
-  --c-b: 'Comforta-Bold';
-  --c-l: 'Comforta-Light';
-
   --time: 250ms;
+  --time3: 3000ms;
   --time-des: cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-@font-face {
-  font-family: 'Comforta-Regular';
-  src: url('./fonts/Comfortaa-Regular.ttf');
-}
-
-@font-face {
-  font-family: 'Comforta-Bold';
-  src: url('./fonts/Comfortaa-Bold.ttf');
-}
-
-@font-face {
-  font-family: 'Comforta-Light';
-  src: url('./fonts/Comfortaa-Light.ttf');
+  --fw2: 200;
+  --fw4: 400;
+  --fw7: 700;
 }
 
 body {
@@ -59,11 +48,13 @@ body {
   background-color: var(--black);
   color: var(--white);
 
-  font-size: var(--fz-16);
-  font-family: var(--c-r);
+  font-size: var(--fz16);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  font-family: 'Karla', sans-serif;
+  font-weight: var(--fw4);
 }
 
 html,
@@ -72,7 +63,7 @@ body {
   line-height: 1.5;
 
   &::-webkit-scrollbar {
-    width: 8px;
+    width: var(--r8);
   }
 
   & ::-webkit-scrollbar-track {
@@ -81,7 +72,7 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    border-radius: 8px;
+    border-radius: var(--r8);
     background: #aaa7a7;
 
     &:hover {
@@ -134,10 +125,13 @@ p {
 button {
   cursor: pointer;
   line-height: 1.5;
-  color: inherit;
 }
 
 img {
   display: block;
   width: 100%;
+}
+
+svg {
+  display: block;
 }
