@@ -1,0 +1,23 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  > h2 {
+    text-align: center;
+    color: var(--light-red);
+    font-size: var(--fz32);
+
+    @media screen and (min-width: 576px) {
+      font-size: var(--fz36);
+    }
+    @media screen and (min-width: 992px) {
+      font-size: var(--fz40);
+    }
+  }
+
+  > svg {
+    color: var(--light-red);
+  }
+}

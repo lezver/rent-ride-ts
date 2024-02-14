@@ -32,11 +32,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--r24);
+  gap: var(--d24);
   background-image: linear-gradient(
     rgba(128, 128, 128, 0.003),
     rgba(128, 128, 128, 0.333)
   );
 
-  padding: var(--r20) 0;
+  padding: var(--d20) 0;
 }

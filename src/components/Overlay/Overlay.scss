@@ -1,0 +1,54 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(var(--d4));
+  z-index: 888;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > div {
+    position: relative;
+    padding: var(--d40) var(--d16);
+    margin: 0 var(--d12);
+    background-color: var(--black);
+    border-radius: var(--d16);
+    max-height: 75vh;
+    max-width: 550px;
+    box-shadow: 0 0 var(--d20) var(--d16) var(--black);
+    overflow-y: auto;
+
+    > button {
+      position: absolute;
+      top: var(--d4);
+      right: var(--d4);
+      display: block;
+      padding: 0;
+      margin: 0;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      > svg {
+        color: var(--light-red);
+        transition: color var(--time) var(--time-des);
+      }
+
+      &:hover,
+      &:focus {
+        > svg {
+          color: var(--red);
+        }
+      }
+
+      &:active {
+        > svg {
+          color: var(--gray);
+        }
+      }
+    }
+  }
+}

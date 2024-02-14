@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.scss';
 
-import { Catalog, Favorites, Home } from '../../pages';
-import { Layout } from '../';
+import { Catalog, Favorites, Home, NotFound } from '../../pages';
+import { InfoAboutFavoriteCar, Layout } from '../';
 
 export const App: React.FC = () => {
   return (
@@ -10,8 +10,13 @@ export const App: React.FC = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="catalog" element={<Catalog />} />
-        <Route path="favorites" element={<Favorites />} />
-        <Route path="*" element={<div>Not Found</div>} />
+        <Route path="favorites" element={<Favorites />}>
+          <Route
+            path="info-about-favorite-car"
+            element={<InfoAboutFavoriteCar />}
+          />
+        </Route>
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

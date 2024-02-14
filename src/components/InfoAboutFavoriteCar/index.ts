@@ -1,0 +1,1 @@
+export { InfoAboutFavoriteCar } from './InfoAboutFavoriteCar';

@@ -1,18 +1,18 @@
 .home {
-  padding-top: 15%;
-  padding-bottom: 15%;
+  padding-top: var(--p50);
+  padding-bottom: var(--p50);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--r16);
+  gap: var(--d16);
 
   text-align: center;
 
   > h1 {
     font-size: var(--fz28);
-    color: var(--red);
+    color: var(--ded);
 
     text-shadow: -1px 1px 2px var(--black), 1px -1px 2px var(--black),
       -1px -1px 2px var(--black), 1px 1px 2px var(--black), 0 0 2em var(--black);
@@ -55,14 +55,14 @@
 
   > button {
     display: flex;
-    gap: var(--r8);
+    gap: var(--d8);
     align-items: center;
     font-size: var(--fz18);
-    border-radius: var(--r12);
+    border-radius: var(--d12);
     color: var(--white);
     background-color: var(--gray);
     font-weight: var(--fw7);
-    padding: var(--r8) var(--r20);
+    padding: var(--d8) var(--d20);
     border: 3px solid var(--white);
 
     text-shadow: -1px 1px 2px var(--black), 1px -1px 2px var(--black),

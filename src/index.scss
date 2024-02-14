@@ -16,6 +16,7 @@
   --bg-gray: rgba(55, 55, 55, 0.7);
 
   --fz12: 12px;
+  --fz14: 14px;
   --fz16: 16px;
   --fz18: 18px;
   --fz20: 20px;
@@ -26,12 +27,18 @@
   --fz36: 36px;
   --fz40: 40px;
 
-  --r4: 4px;
-  --r8: 8px;
-  --r12: 12px;
-  --r16: 16px;
-  --r20: 20px;
-  --r24: 24px;
+  --d4: 4px;
+  --d8: 8px;
+  --d12: 12px;
+  --d16: 16px;
+  --d20: 20px;
+  --d24: 24px;
+  --d28: 28px;
+  --d32: 32px;
+  --d36: 36px;
+  --d40: 40px;
+
+  --p50: 50px;
 
   --time: 250ms;
   --time3: 3000ms;
@@ -59,11 +66,12 @@ body {
 
 html,
 body {
+  scroll-behavior: smooth;
   height: 100%;
   line-height: 1.5;
 
   &::-webkit-scrollbar {
-    width: var(--r8);
+    width: var(--d8);
   }
 
   & ::-webkit-scrollbar-track {
@@ -72,7 +80,7 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    border-radius: var(--r8);
+    border-radius: var(--d8);
     background: #aaa7a7;
 
     &:hover {
@@ -89,16 +97,27 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 1024px;
-  padding: 0 var(--r12);
+  max-width: 1200px;
+  padding: 0 var(--d12);
 
   @media screen and (min-width: 576px) {
-    padding: 0 var(--r24);
+    padding: 0 var(--d24);
   }
 
   @media screen and (min-width: 992px) {
-    padding: 0 var(--r16);
+    padding: 0 var(--d16);
   }
+}
+
+.hidden-title {
+  position: absolute;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 a {

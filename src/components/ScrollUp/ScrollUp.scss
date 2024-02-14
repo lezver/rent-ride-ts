@@ -1,0 +1,12 @@
+.scroll-up {
+  position: fixed;
+  bottom: var(--d24);
+  right: var(--d24);
+  background-color: var(--black);
+  border-radius: 50%;
+  opacity: 0.85;
+
+  > svg {
+    color: var(--red);
+  }
+}

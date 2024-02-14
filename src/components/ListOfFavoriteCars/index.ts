@@ -1,0 +1,1 @@
+export { ListOfFavoriteCars } from './ListOfFavoriteCars';

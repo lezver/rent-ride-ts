@@ -11,11 +11,11 @@
         font-size: var(--fz20);
         color: var(--gray);
         font-weight: var(--fw7);
-        border-bottom-left-radius: var(--r8);
-        border-bottom-right-radius: var(--r8);
+        border-bottom-left-radius: var(--d8);
+        border-bottom-right-radius: var(--d8);
         font-family: var(--c-b);
         background-color: transparent;
-        padding: var(--r8);
+        padding: var(--d8);
 
         transition: color var(--time) var(--time-des),
           background var(--time) var(--time-des);

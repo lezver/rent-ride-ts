@@ -1,9 +1,4 @@
 .by-me {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-
   text-align: center;
   font-size: var(--fz12);
 
@@ -24,27 +19,15 @@
     }
 
     > a {
-      margin-left: var(--r8);
+      margin-left: var(--d8);
 
       > svg {
-        animation: git var(--time3) infinite var(--time3) alternate
-          var(--time-des);
-
-        @keyframes git {
-          0% {
-            transform: scale(0.8);
-            color: var(--light-red);
-          }
-          100% {
-            transform: scale(1);
-            color: var(--red);
-          }
-        }
-      }
-
-      &:hover {
-        > svg {
-          animation-play-state: paused;
+        color: var(--light-red);
+        transition: color var(--time) var(--time-des),
+          transform var(--time) var(--time-des);
+        &:hover {
+          color: var(--black);
+          transform: scale(1.3);
         }
       }
     }

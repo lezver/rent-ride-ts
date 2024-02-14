@@ -1,0 +1,38 @@
+.favorites {
+  padding-top: var(--p50);
+  padding-bottom: var(--p50);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--d28);
+
+  @media screen and (min-width: 992px) {
+    align-items: flex-start;
+  }
+
+  > h3 {
+    font-size: var(--fz24);
+    color: var(--light-red);
+    text-align: center;
+
+    > svg {
+      color: var(--light-red);
+      margin: 0 auto;
+    }
+
+    @media screen and (min-width: 576px) {
+      font-size: var(--fz28);
+    }
+    @media screen and (min-width: 992px) {
+      font-size: var(--fz32);
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+  }
+
+  @media screen and (min-width: 992px) {
+    flex-direction: row;
+  }
+}

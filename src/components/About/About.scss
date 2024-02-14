@@ -1,12 +1,12 @@
 .about {
   margin: 0;
-  padding: var(--r8);
-  padding-left: var(--r24);
+  padding: var(--d8);
+  padding-left: var(--d24);
   background-color: var(--bg-gray);
-  border-radius: var(--r8);
+  border-radius: var(--d8);
   display: flex;
   flex-direction: column;
-  gap: var(--r8);
+  gap: var(--d8);
 
   > li::marker {
     color: var(--red);
@@ -49,8 +49,8 @@
   > li:last-child {
     display: flex;
     justify-content: center;
-    margin: var(--r12) 0;
-    margin-right: var(--r24);
+    margin: var(--d12) 0;
+    margin-right: var(--d24);
 
     &::marker {
       content: '';

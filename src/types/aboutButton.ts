@@ -1,3 +1,3 @@
-export type aboutButton = {
+export type AboutButton = {
   isOpenList: () => void;
 };

@@ -1,0 +1,13 @@
+.title-of-car {
+  font-size: var(--fz20);
+  @media screen and (min-width: 576px) {
+    font-size: var(--fz22);
+  }
+
+  @media screen and (min-width: 992px) {
+    font-size: var(--fz24);
+  }
+  > span {
+    color: var(--light-red);
+  }
+}

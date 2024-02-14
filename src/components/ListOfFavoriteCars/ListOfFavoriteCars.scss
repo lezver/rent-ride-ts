@@ -1,0 +1,87 @@
+.list-of-favorite-cars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--d8);
+  width: fit-content;
+
+  > li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--d16);
+    padding: var(--d8) var(--d16);
+    border-radius: var(--d20);
+    background-color: var(--gray);
+
+    @media screen and (min-width: 992px) {
+      min-width: 350px;
+    }
+
+    > a {
+      font-weight: var(--fw7);
+      font-size: var(--fz18);
+      transition: transform var(--time) var(--time-des),
+        color var(--time) var(--time-des);
+
+      > span {
+        color: var(--black);
+      }
+
+      &:hover,
+      &:focus {
+        transform: scale(1.1);
+        color: var(--red);
+        > span {
+          color: var(--white);
+        }
+      }
+
+      &:active {
+        color: var(--light-red);
+        > span {
+          color: var(--white);
+        }
+      }
+
+      @media screen and (min-width: 576px) {
+        font-size: var(--fz20);
+      }
+      @media screen and (min-width: 992px) {
+        font-size: var(--fz22);
+      }
+    }
+
+    > button {
+      background-color: transparent;
+      outline: none;
+      border: none;
+      padding: 0;
+      transition: transform var(--time) var(--time-des);
+
+      > svg {
+        color: var(--red);
+        transition: color var(--time) var(--time-des);
+      }
+
+      &:hover,
+      &:focus {
+        transform: scale(1.1);
+        > svg {
+          color: var(--light-red);
+        }
+      }
+
+      &:active {
+        > svg {
+          color: var(--gray);
+        }
+      }
+    }
+
+    &.remove-all {
+      background-color: var(--black);
+      min-width: auto;
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+.car {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  gap: var(--d8);
+
+  > .car__img-box {
+    border-radius: var(--d16);
+    overflow: hidden;
+    position: relative;
+
+    @media screen and (min-width: 576px) {
+      height: 250px;
+      > img {
+        object-fit: cover;
+        height: 100%;
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      height: 200px;
+    }
+
+    > button {
+      position: absolute;
+      top: var(--d12);
+      right: var(--d12);
+      padding: 0;
+      margin: 0;
+      border: none;
+      outline: none;
+      background-color: transparent;
+
+      > svg {
+        color: var(--red);
+      }
+    }
+  }
+
+  > .car__title-name-and-price {
+    display: flex;
+    justify-content: space-between;
+
+    > p {
+      font-size: var(--fz20);
+      @media screen and (min-width: 576px) {
+        font-size: var(--fz22);
+      }
+      @media screen and (min-width: 992px) {
+        font-size: var(--fz24);
+      }
+      font-weight: bold;
+    }
+  }
+
+  > p {
+    color: var(--gray);
+    font-size: var(--fz14);
+
+    @media screen and (min-width: 576px) {
+      font-size: var(--fz16);
+    }
+    @media screen and (min-width: 992px) {
+      font-size: var(--fz18);
+    }
+  }
+
+  > button {
+    border-radius: var(--d8);
+    font-size: var(--fz16);
+    font-weight: var(--fw7);
+    text-transform: capitalize;
+    background-color: var(--light-red);
+    border: none;
+    outline: none;
+    padding: var(--d8) var(--d40);
+    color: var(--white);
+    margin: 0 auto;
+
+    transition: color var(--time) var(--time-des),
+      background var(--time) var(--time-des);
+
+    &:hover,
+    &:focus {
+      background-color: var(--red);
+      color: var(--gray);
+    }
+    &:active {
+      background-color: var(--gray);
+      color: var(--red);
+    }
+
+    @media screen and (min-width: 576px) {
+      font-size: var(--fz18);
+    }
+    @media screen and (min-width: 992px) {
+      font-size: var(--fz20);
+    }
+  }
+}

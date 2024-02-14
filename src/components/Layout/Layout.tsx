@@ -1,12 +1,20 @@
 import { Outlet } from 'react-router-dom';
 import './Layout.scss';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { ByMe, Nav, SocialMedia } from '../';
+import { ScrollUp } from '../ScrollUp';
 
 export const Layout: React.FC = () => {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () =>
+      window.scrollY > 1000 ? setIsVisible(true) : setIsVisible(false)
+    );
+  }, []);
   return (
     <>
-      <header className="header">
+      <header className="header" id="scroll-up">
         <Nav />
       </header>
       <main className="main">
@@ -18,6 +26,7 @@ export const Layout: React.FC = () => {
         <SocialMedia />
         <ByMe />
       </footer>
+      {isVisible && <ScrollUp />}
     </>
   );
 };

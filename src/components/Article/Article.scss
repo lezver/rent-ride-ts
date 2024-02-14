@@ -1,0 +1,82 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--d16);
+  > img {
+    border-radius: var(--d16);
+  }
+
+  > a {
+    border-radius: var(--d8);
+    font-size: var(--fz16);
+    font-weight: var(--fw7);
+    text-transform: capitalize;
+    background-color: var(--light-red);
+    border: none;
+    outline: none;
+    padding: var(--d8) var(--d40);
+    color: var(--white);
+    margin: 0 auto;
+
+    transition: color var(--time) var(--time-des),
+      background var(--time) var(--time-des);
+
+    &:hover,
+    &:focus {
+      background-color: var(--red);
+      color: var(--gray);
+    }
+    &:active {
+      background-color: var(--gray);
+      color: var(--red);
+    }
+
+    @media screen and (min-width: 576px) {
+      font-size: var(--fz18);
+    }
+    @media screen and (min-width: 992px) {
+      font-size: var(--fz20);
+    }
+  }
+
+  > ul {
+    > li {
+      color: var(--gray);
+      font-size: var(--fz14);
+
+      @media screen and (min-width: 576px) {
+        font-size: var(--fz16);
+      }
+      @media screen and (min-width: 992px) {
+        font-size: var(--fz16);
+      }
+    }
+  }
+
+  > h4 {
+    font-size: var(--fz18);
+    @media screen and (min-width: 576px) {
+      font-size: var(--fz20);
+    }
+    @media screen and (min-width: 992px) {
+      font-size: var(--fz22);
+    }
+  }
+
+  > .rental-conditions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--d12);
+    > li {
+      padding: var(--d8) var(--d16);
+      border-radius: var(--d20);
+      background-color: var(--gray);
+      font-weight: var(--fw4);
+      color: var(--white);
+      font-size: var(--fz16);
+      > span {
+        color: var(--light-red);
+      }
+    }
+  }
+}
