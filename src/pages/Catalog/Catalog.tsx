@@ -26,7 +26,7 @@ export const Catalog: React.FC = () => {
       ) : (
         <section className="catalog container">
           <h2 className="hidden-title">Catalog</h2>
-          {/* <FIlter /> */}
+          <FIlter cars={cars} />
           {err ? (
             <h2>{err}</h2>
           ) : (

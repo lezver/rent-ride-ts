@@ -1,0 +1,94 @@
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--d16);
+
+  > fieldset {
+    border-radius: var(--d8);
+    padding: var(--d4);
+    display: flex;
+    justify-content: center;
+
+    border: var(--d4) solid var(--light-red);
+    > legend {
+      font-size: var(--fz18);
+      font-weight: var(--fw7);
+      padding: 0 var(--d4);
+      color: var(--red);
+
+      @media screen and (min-width: 576px) {
+        font-size: var(--fz20);
+      }
+      @media screen and (min-width: 992px) {
+        font-size: var(--fz22);
+      }
+    }
+
+    > select {
+      font-size: var(--fz16);
+      background-color: transparent;
+      color: var(--white);
+      outline: none;
+      border: none;
+
+      @media screen and (min-width: 576px) {
+        font-size: var(--fz18);
+      }
+      @media screen and (min-width: 992px) {
+        font-size: var(--fz20);
+      }
+    }
+
+    > input {
+      color: var(--white);
+      background-color: transparent;
+      outline: none;
+      border: none;
+      font-size: var(--fz16);
+      width: 50%;
+      max-width: 150px;
+      &::placeholder {
+        color: var(--white);
+        opacity: 0.8;
+      }
+
+      @media screen and (min-width: 576px) {
+        font-size: var(--fz18);
+      }
+      @media screen and (min-width: 992px) {
+        font-size: var(--fz20);
+      }
+    }
+  }
+
+  > button {
+    height: fit-content;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    transition: transform var(--time) var(--time-des);
+
+    > svg {
+      color: var(--light-red);
+      transition: color var(--time) var(--time-des);
+    }
+
+    &:hover,
+    &:focus {
+      > svg {
+        color: var(--red);
+      }
+      transform: scale(1.1);
+    }
+
+    &:active {
+      > svg {
+        color: var(--white);
+      }
+    }
+  }
+}
