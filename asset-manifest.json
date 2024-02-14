@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/rent-ride-ts/static/css/main.097d76a8.css",
-    "main.js": "/rent-ride-ts/static/js/main.7ec5f1d3.js",
+    "main.css": "/rent-ride-ts/static/css/main.dfa9b41d.css",
+    "main.js": "/rent-ride-ts/static/js/main.cd7a1066.js",
     "static/media/mob-bg.jpeg": "/rent-ride-ts/static/media/mob-bg.a6187e1a1f52b080f977.jpeg",
     "static/media/tab-bg.jpeg": "/rent-ride-ts/static/media/tab-bg.18350dc38b99258f6bb4.jpeg",
     "static/media/desk-bg.jpeg": "/rent-ride-ts/static/media/desk-bg.1c671378e00757b858ed.jpeg",
     "index.html": "/rent-ride-ts/index.html",
-    "main.097d76a8.css.map": "/rent-ride-ts/static/css/main.097d76a8.css.map",
-    "main.7ec5f1d3.js.map": "/rent-ride-ts/static/js/main.7ec5f1d3.js.map"
+    "main.dfa9b41d.css.map": "/rent-ride-ts/static/css/main.dfa9b41d.css.map",
+    "main.cd7a1066.js.map": "/rent-ride-ts/static/js/main.cd7a1066.js.map"
   },
   "entrypoints": [
-    "static/css/main.097d76a8.css",
-    "static/js/main.7ec5f1d3.js"
+    "static/css/main.dfa9b41d.css",
+    "static/js/main.cd7a1066.js"
   ]
 }
