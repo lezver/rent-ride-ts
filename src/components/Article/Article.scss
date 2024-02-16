@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--d16);
+
   > img {
     border-radius: var(--d16);
   }
@@ -40,6 +41,9 @@
   }
 
   > ul {
+    text-shadow: -1px 1px 2px var(--black), 1px -1px 2px var(--black),
+      -1px -1px 2px var(--black), 1px 1px 2px var(--black), 0 0 2px var(--black);
+
     > li {
       color: var(--gray);
       font-size: var(--fz14);
@@ -67,6 +71,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--d12);
+    text-shadow: none;
+
     > li {
       padding: var(--d8) var(--d16);
       border-radius: var(--d20);

@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.scss';
 
 import { Catalog, Favorites, Home, NotFound } from '../../pages';
 import { InfoAboutFavoriteCar, Layout } from '../';

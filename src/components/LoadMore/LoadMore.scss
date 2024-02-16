@@ -7,12 +7,11 @@
   outline: none;
   border: none;
   padding: var(--d8) var(--d16);
-  border-bottom-left-radius: var(--d16);
-  border-bottom-right-radius: var(--d16);
-  border-bottom: var(--d4) dashed var(--red);
+  border: var(--d4) solid var(--red);
+  border-radius: var(--d16);
 
   transition: color var(--time) var(--time-des),
-    border var(--time) var(--time-des);
+    border var(--time) var(--time-des), box-shadow var(--time) var(--time-des);
 
   @media screen and (min-width: 576px) {
     font-size: var(--fz20);
@@ -23,12 +22,12 @@
 
   &:hover,
   &:focus {
-    color: var(--gray);
-    border-color: var(--gray);
+    box-shadow: 0px 0px 15px 5px var(--red);
   }
 
   &:active {
     color: var(--white);
     border-color: var(--white);
+    box-shadow: none;
   }
 }

@@ -22,6 +22,19 @@
     box-shadow: 0 0 var(--d20) var(--d16) var(--black);
     overflow-y: auto;
 
+    &::-webkit-scrollbar {
+      width: var(--d4);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: var(--d4);
+      background: var(--gray);
+
+      &:hover {
+        background: var(--light-red);
+      }
+    }
+
     > button {
       position: absolute;
       top: var(--d4);

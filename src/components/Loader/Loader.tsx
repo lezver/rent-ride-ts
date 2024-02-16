@@ -1,4 +1,5 @@
 import { Oval } from 'react-loader-spinner';
+import './Loader.scss';
 
 export const Loader: React.FC = () => (
   <Oval

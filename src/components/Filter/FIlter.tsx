@@ -1,15 +1,43 @@
-import { ChangeEvent, ChangeEventHandler, FormEvent } from 'react';
 import './FIlter.scss';
 import { FaSearch } from 'react-icons/fa';
-import { ICarCharacteristics, ICars } from '../../types/aboutCars';
+import { ICarCharacteristics } from '../../types/aboutCars';
+import { IFormElements, IPropsFilterItems } from '../../types/aboutFilter';
+import { useEffect } from 'react';
 
-export const FIlter: React.FC<ICars> = ({ cars }) => {
-  const heandlerSubmit = (e: FormEvent) => {
+export const FIlter: React.FC<IPropsFilterItems> = ({
+  cars,
+  setFilteredCars,
+  setIsSearch,
+  setPage,
+}) => {
+  useEffect(() => setFilteredCars(cars), []);
+
+  const heandlerSubmit = (e: React.FormEvent<IFormElements>): void => {
     e.preventDefault();
-    console.log(e);
+
+    setIsSearch(true);
+
+    const brand: string = e.currentTarget.elements.brand.value;
+    const price: string = e.currentTarget.elements.price.value;
+    const from: string = e.currentTarget.elements.from.value;
+    const to: string = e.currentTarget.elements.to.value;
+
+    const filteredCars: ICarCharacteristics[] = cars
+      .filter(car => (brand !== 'All' ? brand === car.make : car))
+      .filter(car =>
+        price !== 'All' ? price.split(' ').join('') === car.rentalPrice : car
+      )
+      .filter(car => (from !== '' ? Number(from) <= car.mileage : car))
+      .filter(car => (to !== '' ? Number(to) >= car.mileage : car));
+
+    setPage(8);
+    setTimeout(() => {
+      setFilteredCars(filteredCars);
+      setIsSearch(false);
+    }, 300);
   };
 
-  const validatedValue = (e: ChangeEvent<HTMLInputElement>): void => {
+  const validatedValue = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const maxLength: number = Math.max(
       ...cars.map(car => car.mileage)
     ).toString().length;
@@ -39,9 +67,11 @@ export const FIlter: React.FC<ICars> = ({ cars }) => {
       <fieldset>
         <legend>Car brand</legend>
         <select name="brand" id="brand">
-          <option value="all">All</option>
+          <option value="All">All</option>
           {uniqueBrands(cars).map((brand, index) => (
-            <option key={index}>{brand}</option>
+            <option key={index} value={brand}>
+              {brand}
+            </option>
           ))}
         </select>
       </fieldset>
@@ -49,9 +79,11 @@ export const FIlter: React.FC<ICars> = ({ cars }) => {
       <fieldset>
         <legend>Price / 1 hour</legend>
         <select name="price" id="price">
-          <option value="all">All</option>
+          <option value="All">All</option>
           {uniquePrices(cars).map((price, index) => (
-            <option key={index}>{price}</option>
+            <option key={index} value={price}>
+              {price}
+            </option>
           ))}
         </select>
       </fieldset>
@@ -72,7 +104,7 @@ export const FIlter: React.FC<ICars> = ({ cars }) => {
         />
       </fieldset>
       <button type="submit">
-        <FaSearch size={38} />
+        <FaSearch size={30} />
       </button>
     </form>
   );

@@ -73,7 +73,7 @@ export const Car: React.FC<IPropsCar> = ({ car }) => {
             year: car.year,
           }}
         />
-        <p>{car.rentalPrice}</p>
+        <span>{car.rentalPrice}</span>
       </div>
 
       <p>{`${getsCityAndCountry(car.address)} | ${car.rentalCompany}`}</p>

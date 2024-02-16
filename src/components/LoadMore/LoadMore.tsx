@@ -21,7 +21,7 @@ export const LoadMore: React.FC<IPropsLoadMore> = ({
       type="button"
       onClick={() => incrementPageOnTypeLoadMore(8, true)}
     >
-      Load More
+      More Cars
     </button>
   );
 };

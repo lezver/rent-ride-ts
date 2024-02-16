@@ -9,13 +9,12 @@
   gap: var(--d16);
 
   text-align: center;
+  text-shadow: -1px 1px 2px var(--black), 1px -1px 2px var(--black),
+    -1px -1px 2px var(--black), 1px 1px 2px var(--black), 0 0 2px var(--black);
 
   > h1 {
     font-size: var(--fz28);
     color: var(--ded);
-
-    text-shadow: -1px 1px 2px var(--black), 1px -1px 2px var(--black),
-      -1px -1px 2px var(--black), 1px 1px 2px var(--black), 0 0 2em var(--black);
 
     @media screen and (min-width: 576px) {
       font-size: var(--fz36);
@@ -28,8 +27,6 @@
 
   > p {
     color: var(--white);
-    text-shadow: -1px 1px 2px var(--black), 1px -1px 2px var(--black),
-      -1px -1px 2px var(--black), 1px 1px 2px var(--black), 0 0 2em var(--black);
 
     @media screen and (min-width: 576px) {
       font-size: var(--fz18);
@@ -65,14 +62,29 @@
     padding: var(--d8) var(--d20);
     border: 3px solid var(--white);
 
-    text-shadow: -1px 1px 2px var(--black), 1px -1px 2px var(--black),
-      -1px -1px 2px var(--black), 1px 1px 2px var(--black), 0 0 2em var(--black);
-
     outline: none;
     border: none;
 
+    transition: transform var(--time) var(--time-des),
+      color var(--time) var(--time-des);
+
     > svg {
       color: var(--light-red);
+      transition: color var(--time) var(--time-des);
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--light-red);
+      transform: scale(1.01);
+    }
+
+    &:active {
+      color: var(--white);
+
+      > svg {
+        color: var(--white);
+      }
     }
 
     @media screen and (min-width: 576px) {

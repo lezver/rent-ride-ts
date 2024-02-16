@@ -1,28 +1,21 @@
+.header {
+  background: var(--linear-header);
+}
+
 .main {
   flex: 1 1 auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
 
-  background: linear-gradient(
-      rgba(128, 128, 128, 0.17),
-      rgba(128, 128, 128, 0.17)
-    ),
+  background: var(--linear-main),
     url('../../images/mob-bg.jpeg') no-repeat center/cover fixed;
 
   @media screen and (min-width: 576px) {
-    background: linear-gradient(
-        rgba(128, 128, 128, 0.17),
-        rgba(128, 128, 128, 0.17)
-      ),
+    background: var(--linear-main),
       url('../../images/tab-bg.jpeg') no-repeat center/cover fixed;
   }
 
   @media screen and (min-width: 992px) {
-    background: linear-gradient(
-        rgba(128, 128, 128, 0.17),
-        rgba(128, 128, 128, 0.17)
-      ),
+    background: var(--linear-main),
       url('../../images/desk-bg.jpeg') no-repeat center/cover fixed;
   }
 }
@@ -33,10 +26,7 @@
   justify-content: center;
   align-items: center;
   gap: var(--d24);
-  background-image: linear-gradient(
-    rgba(128, 128, 128, 0.003),
-    rgba(128, 128, 128, 0.333)
-  );
+  background: var(--linear-footer);
 
   padding: var(--d20) 0;
 }

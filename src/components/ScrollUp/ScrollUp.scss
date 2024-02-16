@@ -6,7 +6,16 @@
   border-radius: 50%;
   opacity: 0.85;
 
+  transition: transform var(--time) var(--time-des),
+    opacity var(--time) var(--time-des);
+
   > svg {
     color: var(--red);
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    opacity: 1;
   }
 }

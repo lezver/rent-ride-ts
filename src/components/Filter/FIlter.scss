@@ -33,11 +33,29 @@
       outline: none;
       border: none;
 
+      &::-webkit-scrollbar {
+        width: var(--d4);
+        background-color: var(--gray);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: var(--d4);
+        background: var(--gray);
+
+        &:hover {
+          background: var(--light-red);
+        }
+      }
+
       @media screen and (min-width: 576px) {
         font-size: var(--fz18);
       }
       @media screen and (min-width: 992px) {
         font-size: var(--fz20);
+      }
+
+      > option {
+        background-color: var(--black);
       }
     }
 
@@ -49,6 +67,13 @@
       font-size: var(--fz16);
       width: 50%;
       max-width: 150px;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
       &::placeholder {
         color: var(--white);
         opacity: 0.8;
@@ -90,5 +115,9 @@
         color: var(--white);
       }
     }
+  }
+
+  > .test {
+    color: white;
   }
 }
