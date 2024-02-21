@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { About } from '../../components';
+import { Advantages } from '../../components';
 import './Home.scss';
 import { FaArrowTurnDown } from 'react-icons/fa6';
 import { RiCloseCircleLine } from 'react-icons/ri';
@@ -27,7 +27,7 @@ export const Home: React.FC = () => {
           <FaArrowTurnDown size={30} />
         )}
       </button>
-      {isOpen && <About isOpenList={isOpenList} />}
+      {isOpen && <Advantages isOpenList={isOpenList} />}
       <p>
         Embark on your journey with confidence, knowing that RentRide is here to
         elevate your travel experience. Discover the joy of driving the perfect

@@ -2,7 +2,7 @@ import { App } from './App';
 import { Layout } from './Layout';
 import { Nav } from './Nav';
 import { SocialMedia } from './SocialMedia';
-import { About } from './About';
+import { Advantages } from './Advantages';
 import { ByMe } from './ByMe';
 import { FIlter } from './Filter';
 import { LIstOfCars } from './LIstOfCars';
@@ -21,7 +21,7 @@ export {
   Layout,
   Nav,
   SocialMedia,
-  About,
+  Advantages,
   ByMe,
   FIlter,
   LIstOfCars,
