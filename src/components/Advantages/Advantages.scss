@@ -1,8 +1,21 @@
-.about {
+.advantages {
   margin: 0;
   display: flex;
   flex-direction: column;
   gap: var(--d8);
+
+  background-color: var(--translucent);
+  border-radius: var(--d16);
+  padding: var(--d16);
+  padding-left: var(--d32);
+
+  @media screen and (min-width: 576px) {
+    max-width: 80%;
+  }
+
+  @media screen and (min-width: 576px) {
+    max-width: 65%;
+  }
 
   > li::marker {
     color: var(--red);

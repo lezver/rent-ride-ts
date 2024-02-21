@@ -10,11 +10,11 @@ export const Advantages: React.FC<IAdvantages> = ({ isOpenList }) => {
   useEffect(() => listOfAdvantages && setListOfAdvantages(advantages), []);
 
   return (
-    <ol className="about">
-      {listOfAdvantages?.map((item, index) => (
+    <ol className="advantages">
+      {listOfAdvantages?.map(({ title, text }, index) => (
         <li key={index}>
-          <h2>{item.title}</h2>
-          <p>{item.text}</p>
+          <h2>{title}</h2>
+          <p>{text}</p>
         </li>
       ))}
       <li>
