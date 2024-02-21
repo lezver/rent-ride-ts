@@ -1,8 +1,8 @@
-import { ICarCharacteristics } from './aboutCars';
+import { ICar } from './car';
 
 export interface IPropsFilterItems {
-  cars: ICarCharacteristics[];
-  setFilteredCars: (filteredCars: ICarCharacteristics[]) => void;
+  cars: ICar[];
+  setFilteredCars: (filteredCars: ICar[]) => void;
   setIsSearch: (bool: boolean) => void;
   setPage: (num: number) => void;
 }
@@ -12,8 +12,14 @@ export interface IElements extends HTMLFormControlsCollection {
   price: HTMLSelectElement;
   from: HTMLInputElement;
   to: HTMLInputElement;
+  search: HTMLButtonElement;
+  remove: HTMLButtonElement;
 }
 
 export interface IFormElements extends HTMLFormElement {
-  readonly elements: IElements;
+  elements: IElements;
+}
+
+export declare interface ICollection extends Element {
+  newTypeOfShit: number;
 }

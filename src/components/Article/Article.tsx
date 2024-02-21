@@ -1,5 +1,5 @@
 import { getsCityAndCountry } from '../../healpers';
-import { IPropsCar } from '../../types/aboutCars';
+import { IPropsCar } from '../../interface/car';
 import { TitleOfCar } from '../TitleOfCar';
 
 import './Article.scss';
@@ -24,7 +24,7 @@ export const Article: React.FC<IPropsCar> = ({ car }) => {
     <article className="article">
       <img src={car?.img} alt={car?.model} />
       <TitleOfCar
-        propsOfMakeModelYear={{
+        items={{
           model: car?.model,
           make: car?.make,
           year: car?.year,

@@ -5,6 +5,16 @@
   align-items: center;
   gap: var(--d16);
 
+  max-width: 360px;
+
+  @media screen and (min-width: 576px) {
+    max-width: 530px;
+  }
+
+  @media screen and (min-width: 992px) {
+    max-width: fit-content;
+  }
+
   > fieldset {
     border-radius: var(--d8);
     padding: var(--d4);
@@ -104,10 +114,11 @@
 
     &:hover,
     &:focus {
+      transform: scale(1.1);
+
       > svg {
         color: var(--red);
       }
-      transform: scale(1.1);
     }
 
     &:active {
@@ -115,9 +126,13 @@
         color: var(--white);
       }
     }
-  }
+    &:disabled {
+      transform: scale(1);
 
-  > .test {
-    color: white;
+      > svg {
+        color: var(--gray);
+        cursor: auto;
+      }
+    }
   }
 }

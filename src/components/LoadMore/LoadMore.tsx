@@ -1,4 +1,4 @@
-import { IPropsLoadMore } from '../../types/aboutLoadMore';
+import { IPropsLoadMore } from '../../interface/loadMore';
 import './LoadMore.scss';
 
 export const LoadMore: React.FC<IPropsLoadMore> = ({

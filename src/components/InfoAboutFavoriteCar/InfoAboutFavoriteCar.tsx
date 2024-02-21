@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { Article } from '../Article';
 
 import { useLocation } from 'react-router-dom';
-import { ICarCharacteristics } from '../../types/aboutCars';
+import { ICar } from '../../interface/car';
 
 export const InfoAboutFavoriteCar: React.FC = () => {
-  const stub: ICarCharacteristics = {
+  const stub: ICar = {
     accessories: [],
     address: '',
     description: '',
@@ -23,7 +23,7 @@ export const InfoAboutFavoriteCar: React.FC = () => {
     type: '',
     year: 0,
   };
-  const [foundCar, setFoundCar] = useState<ICarCharacteristics>(stub);
+  const [foundCar, setFoundCar] = useState<ICar>(stub);
   const { state } = useLocation();
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export const InfoAboutFavoriteCar: React.FC = () => {
 
     if (localCars) {
       JSON.parse(localCars).find(
-        (car: ICarCharacteristics) => car.id === state && setFoundCar(car)
+        (car: ICar) => car.id === state && setFoundCar(car)
       );
     }
   }, [state]);

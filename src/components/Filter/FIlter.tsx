@@ -1,8 +1,8 @@
 import './FIlter.scss';
-import { FaSearch } from 'react-icons/fa';
-import { ICarCharacteristics } from '../../types/aboutCars';
-import { IFormElements, IPropsFilterItems } from '../../types/aboutFilter';
-import { useEffect } from 'react';
+import { FaSearch, FaSyncAlt } from 'react-icons/fa';
+import { ICar } from '../../interface/car';
+import { IFormElements, IPropsFilterItems } from '../../interface/filter';
+import { useEffect, useRef, useState } from 'react';
 
 export const FIlter: React.FC<IPropsFilterItems> = ({
   cars,
@@ -10,31 +10,96 @@ export const FIlter: React.FC<IPropsFilterItems> = ({
   setIsSearch,
   setPage,
 }) => {
-  useEffect(() => setFilteredCars(cars), []);
+  const refOfFilter = useRef<IFormElements>(null);
+
+  const [isRemove, setIsRemove] = useState<boolean>(false);
+
+  useEffect(() => {
+    setFilteredCars(cars);
+
+    if (refOfFilter.current) {
+      const remove = refOfFilter.current.elements.remove;
+      const search = refOfFilter.current.elements.search;
+
+      remove.disabled = true;
+      search.disabled = true;
+    }
+  }, []);
+
+  const removeBtn = (): void => setIsRemove(true);
+
+  const listenerOfItems = (e: React.ChangeEvent<IFormElements>): void => {
+    const brand = e.currentTarget.elements.brand;
+    const price = e.currentTarget.elements.price;
+    const from = e.currentTarget.elements.from;
+    const to = e.currentTarget.elements.to;
+
+    const search = e.currentTarget.elements.search;
+    const remove = e.currentTarget.elements.remove;
+
+    search.disabled = true;
+    remove.disabled = true;
+
+    if (
+      brand.value === 'All' &&
+      price.value === 'All' &&
+      from.value === '' &&
+      to.value === ''
+    ) {
+      search.disabled = true;
+      remove.disabled = true;
+    } else {
+      search.disabled = false;
+      remove.disabled = false;
+    }
+  };
 
   const heandlerSubmit = (e: React.FormEvent<IFormElements>): void => {
     e.preventDefault();
 
     setIsSearch(true);
 
-    const brand: string = e.currentTarget.elements.brand.value;
-    const price: string = e.currentTarget.elements.price.value;
-    const from: string = e.currentTarget.elements.from.value;
-    const to: string = e.currentTarget.elements.to.value;
+    const brand = e.currentTarget.elements.brand;
+    const price = e.currentTarget.elements.price;
+    const from = e.currentTarget.elements.from;
+    const to = e.currentTarget.elements.to;
 
-    const filteredCars: ICarCharacteristics[] = cars
-      .filter(car => (brand !== 'All' ? brand === car.make : car))
-      .filter(car =>
-        price !== 'All' ? price.split(' ').join('') === car.rentalPrice : car
-      )
-      .filter(car => (from !== '' ? Number(from) <= car.mileage : car))
-      .filter(car => (to !== '' ? Number(to) >= car.mileage : car));
+    const search = e.currentTarget.elements.search;
+    const remove = e.currentTarget.elements.remove;
 
-    setPage(8);
-    setTimeout(() => {
+    if (isRemove) {
+      brand.value = 'All';
+      price.value = 'All';
+      from.value = '';
+      to.value = '';
+
+      setIsRemove(false);
+
+      setPage(8);
+      setFilteredCars(cars);
+      setTimeout(() => setIsSearch(false), 300);
+
+      remove.disabled = true;
+    } else {
+      const filteredCars: ICar[] = cars
+        .filter(car => (brand.value !== 'All' ? brand.value === car.make : car))
+        .filter(car =>
+          price.value !== 'All'
+            ? price.value.split(' ').join('') === car.rentalPrice
+            : car
+        )
+        .filter(car =>
+          from.value !== '' ? Number(from.value) <= car.mileage : car
+        )
+        .filter(car =>
+          to.value !== '' ? Number(to.value) >= car.mileage : car
+        );
+      setPage(8);
       setFilteredCars(filteredCars);
-      setIsSearch(false);
-    }, 300);
+      setTimeout(() => setIsSearch(false), 300);
+
+      search.disabled = true;
+    }
   };
 
   const validatedValue = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -48,13 +113,13 @@ export const FIlter: React.FC<IPropsFilterItems> = ({
     }
   };
 
-  const uniqueBrands = (cars: ICarCharacteristics[]): string[] =>
+  const uniqueBrands = (cars: ICar[]): string[] =>
     cars
       .map(car => car.make)
       .filter((make, index, arr) => arr.indexOf(make) === index)
       .sort();
 
-  const uniquePrices = (cars: ICarCharacteristics[]): string[] =>
+  const uniquePrices = (cars: ICar[]): string[] =>
     cars
       .map(car => car.rentalPrice.slice(1))
       .filter((price, index, arr) => arr.indexOf(price) === index)
@@ -63,7 +128,13 @@ export const FIlter: React.FC<IPropsFilterItems> = ({
       .map(price => '$ ' + price);
 
   return (
-    <form className="filter" onSubmit={heandlerSubmit}>
+    <form
+      id="filter"
+      className="filter"
+      onSubmit={heandlerSubmit}
+      onChange={listenerOfItems}
+      ref={refOfFilter}
+    >
       <fieldset>
         <legend>Car brand</legend>
         <select name="brand" id="brand">
@@ -103,8 +174,11 @@ export const FIlter: React.FC<IPropsFilterItems> = ({
           onChange={validatedValue}
         />
       </fieldset>
-      <button type="submit">
+      <button type="submit" name="search">
         <FaSearch size={30} />
+      </button>
+      <button type="submit" name="remove" onClick={removeBtn}>
+        <FaSyncAlt size={30} />
       </button>
     </form>
   );

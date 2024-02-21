@@ -1,4 +1,4 @@
-import { ICarCharacteristics, IPropsCar } from '../../types/aboutCars';
+import { ICar, IPropsCar } from '../../interface/car';
 import { MdFavorite, MdFavoriteBorder } from 'react-icons/md';
 import './Car.scss';
 import { useEffect, useState } from 'react';
@@ -11,7 +11,7 @@ export const Car: React.FC<IPropsCar> = ({ car }) => {
     const localCars = localStorage.getItem('addedToFavoriteCars');
 
     if (localCars)
-      JSON.parse(localCars).find(({ id }: ICarCharacteristics) =>
+      JSON.parse(localCars).find(({ id }: ICar) =>
         id === car.id ? setIsFavorite(true) : ''
       );
   }, [car]);
@@ -24,12 +24,12 @@ export const Car: React.FC<IPropsCar> = ({ car }) => {
     const localCarsToArray = localCars ? JSON.parse(localCars) : [];
 
     const checkCarInArr = localCarsToArray.find(
-      ({ id }: ICarCharacteristics) => id === car.id
+      ({ id }: ICar) => id === car.id
     );
 
     if (checkCarInArr) {
       const removeCarInLocalCars = localCarsToArray.filter(
-        ({ id }: ICarCharacteristics) => id !== car.id
+        ({ id }: ICar) => id !== car.id
       );
 
       localStorage.setItem(
@@ -67,7 +67,7 @@ export const Car: React.FC<IPropsCar> = ({ car }) => {
 
       <div className="car__title-name-and-price">
         <TitleOfCar
-          propsOfMakeModelYear={{
+          items={{
             model: car.model,
             make: car.make,
             year: car.year,

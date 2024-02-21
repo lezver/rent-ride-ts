@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 import { FIlter, LIstOfCars, LoadMore, Loader } from '../../components';
 import './Catalog.scss';
 import { getCars } from '../../services/Api';
-import { ICarCharacteristics } from '../../types/aboutCars';
+import { ICar } from '../../interface/car';
 
 export const Catalog: React.FC = () => {
-  const [cars, setCars] = useState<ICarCharacteristics[]>([]);
+  const [cars, setCars] = useState<ICar[]>([]);
   const [someError, setSomeError] = useState<string>('');
   const [page, setPage] = useState<number>(8);
   const [isPushed, setIsPushed] = useState<boolean>(false);
-  const [filteredCars, setFilteredCars] = useState<ICarCharacteristics[]>([]);
+  const [filteredCars, setFilteredCars] = useState<ICar[]>([]);
   const [isSearch, setIsSearch] = useState<boolean>(false);
 
   useEffect(() => {

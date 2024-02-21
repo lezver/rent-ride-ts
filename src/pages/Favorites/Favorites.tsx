@@ -1,12 +1,12 @@
 import { Suspense, useEffect, useState } from 'react';
 import './Favorites.scss';
-import { ICarCharacteristics } from '../../types/aboutCars';
+import { ICar } from '../../interface/car';
 import { Outlet } from 'react-router-dom';
 import { ListOfFavoriteCars } from '../../components';
 import { TbCarOff } from 'react-icons/tb';
 
 export const Favorites: React.FC = () => {
-  const [favoriteCars, setFavoriteCars] = useState<ICarCharacteristics[]>([]);
+  const [favoriteCars, setFavoriteCars] = useState<ICar[]>([]);
   const [isRemoved, setIsRemoved] = useState<boolean>(true);
 
   useEffect(() => {

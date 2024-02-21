@@ -1,12 +1,10 @@
-import { IPropsCar, IPropsOfMakeModelYear } from '../../types/aboutCars';
+import { IPropsTitleOfCar } from '../../interface/titleOfCar';
 import './TitleOfCar.scss';
 
-export const TitleOfCar: React.FC<IPropsOfMakeModelYear> = ({
-  propsOfMakeModelYear,
-}) => (
+export const TitleOfCar: React.FC<IPropsTitleOfCar> = ({ items }) => (
   <h3 className="title-of-car">
-    {propsOfMakeModelYear.make}
-    <span>{` ${propsOfMakeModelYear.model}`}</span>
-    {`, ${propsOfMakeModelYear.year}`}
+    {items.make}
+    <span>{` ${items.model}`}</span>
+    {`, ${items.year}`}
   </h3>
 );

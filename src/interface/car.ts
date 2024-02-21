@@ -1,4 +1,4 @@
-export interface ICarCharacteristics {
+export interface ICar {
   accessories: string[];
   address: string;
   description: string;
@@ -17,23 +17,6 @@ export interface ICarCharacteristics {
   year: number;
 }
 
-export interface ICars {
-  cars: ICarCharacteristics[];
-}
-
 export interface IPropsCar {
-  car: ICarCharacteristics;
-}
-
-export interface IPropsBooleanAndCar {
-  setIsOpen: Function;
-  car: ICarCharacteristics;
-}
-
-export interface IPropsOfMakeModelYear {
-  propsOfMakeModelYear: {
-    make: string;
-    model: string;
-    year: number;
-  };
+  car: ICar;
 }

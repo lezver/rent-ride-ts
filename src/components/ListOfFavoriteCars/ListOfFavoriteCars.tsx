@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import './ListOfFavoriteCars.scss';
 import { MdDeleteOutline } from 'react-icons/md';
 import { RxCrossCircled } from 'react-icons/rx';
-import { IPropsListOfFavoriteCars } from '../../types/aboutFavoriteCars';
+import { IPropsListOfFavoriteCars } from '../../interface/favoriteCars';
 
 export const ListOfFavoriteCars: React.FC<IPropsListOfFavoriteCars> = ({
   favoriteCars,

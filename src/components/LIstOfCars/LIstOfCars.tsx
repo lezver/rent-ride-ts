@@ -1,4 +1,4 @@
-import { ICars } from '../../types/aboutCars';
+import { ICars } from '../../interface/cars';
 import { Car } from '../Car';
 import './LIstOfCars.scss';
 

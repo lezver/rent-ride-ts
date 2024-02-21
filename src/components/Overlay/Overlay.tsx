@@ -2,11 +2,11 @@ import { createPortal } from 'react-dom';
 import './Overlay.scss';
 import { useEffect } from 'react';
 import { RxCrossCircled } from 'react-icons/rx';
-import { IPropsBooleanAndCar } from '../../types/aboutCars';
-import { IEventKey, IEventTarget } from '../../types/aboutOverlay';
+import { IPropsOverlay } from '../../interface/overlay';
+import { IEventKey, IEventTarget } from '../../interface/overlay';
 import { Article } from '../Article';
 
-export const Overlay: React.FC<IPropsBooleanAndCar> = ({ setIsOpen, car }) => {
+export const Overlay: React.FC<IPropsOverlay> = ({ setIsOpen, car }) => {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', closeOverlayWithEscape);

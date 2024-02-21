@@ -1,8 +1,8 @@
-import { AboutButton } from '../../types/aboutButton';
+import { IAbout } from '../../interface/about';
 import './About.scss';
 import { RiCloseCircleLine } from 'react-icons/ri';
 
-export const About: React.FC<AboutButton> = ({ isOpenList }) => {
+export const About: React.FC<IAbout> = ({ isOpenList }) => {
   return (
     <ol className="about">
       <li>
